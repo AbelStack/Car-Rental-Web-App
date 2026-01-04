@@ -1,0 +1,54 @@
+#  Functional Requirements — User Stories
+
+## Customer User Stories
+
+### US-01 — User Registration
+As a customer, I want to create an account so that I can rent or buy cars using the system.
+
+### US-02 — User Login
+As a customer, I want to log in securely so that I can access my bookings and purchases.
+
+### US-03 — Language Selection
+As a customer, I want to choose Amharic or English so that I can use the system in my preferred language.
+
+### US-04 — Browse Rental Cars
+As a customer, I want to view available rental cars so that I can choose a suitable vehicle.
+
+### US-05 — Search & Filter Rental Cars
+As a customer, I want to search and filter rental cars by price, type, and availability so that I can quickly find what I need.
+
+### US-06 — Choose Driving Option
+As a customer, I want to select self-drive or with-driver so that I can rent according to my preference.
+
+### US-07 — Select Pickup & Drop-off Location
+As a customer, I want to select pickup and drop-off locations using a map so that locations are accurate.
+
+### US-08 — Check Vehicle Availability
+As a customer, I want the system to check car availability for my selected dates so that I don’t book an unavailable car.
+
+### US-09 — Create Rental Booking
+As a customer, I want to confirm a rental booking so that the car is reserved for me.
+
+### US-10 — Make Rental Payment
+As a customer, I want to pay using bank mobile banking so that I can complete my booking.
+
+### US-11 — Submit Payment Reference
+As a customer, I want to submit my transaction reference so that my payment can be verified.
+
+### US-12 — Browse Cars for Sale
+As a customer, I want to view cars available for sale so that I can decide to buy one.
+
+### US-13 — Search & Filter Cars for Sale
+As a customer, I want to filter cars for sale by price and model so that I can find a suitable car.
+
+### US-14 — Purchase a Car
+As a customer, I want to purchase a car using mobile banking so that I can buy it online.
+
+### US-15 — View Booking & Purchase History
+As a customer, I want to view my rental and purchase history so that I can track my activities.
+
+### US-16 — Cancel Rental Booking
+As a customer, I want to cancel a booking so that I can change my plans if needed.
+
+### US-17 — Contact Customer Support
+As a customer, I want to contact customer support so that I can get help when I have problems.
