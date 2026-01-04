@@ -1,0 +1,57 @@
+# List of Actors
+
+## 1. User (Customer)
+
+### Description
+A registered user who interacts with the system to rent cars, buy cars, make payments, and manage bookings.
+
+### Responsibilities
+- Register and log in to the system
+- Browse available cars for rent or sale
+- Search cars using filters (location, price, type, date)
+- Choose rental options (self-drive or with driver)
+- Make payments using mobile banking services
+- Book cars for rental
+- Purchase cars for sale
+- Cancel bookings and request refunds
+- View booking history and payment status
+- Submit customer support requests
+
+---
+
+## 2. Admin
+
+### Description
+System administrator responsible for managing the platform and overseeing operations.
+
+### Responsibilities
+- Manage vehicles (add, update, delete cars for rent or sale)
+- Manage users (view, activate, deactivate accounts)
+- Manage bookings and sales records
+- Monitor payments and refunds
+- Assign drivers to bookings (if driver option is selected)
+- View system reports and analytics
+
+---
+
+## 3. Driver
+
+### Description
+A driver assigned to rental bookings when the customer selects the "with driver" option.
+
+### Responsibilities
+- View assigned trips
+- Accept or reject ride assignments
+- View pickup and drop-off locations using map integration
+
+---
+
+## 4. Customer Support
+
+### Description
+Support staff responsible for handling user issues and inquiries.
+
+### Responsibilities
+- Respond to user complaints and questions
+- Assist with booking issues and cancellations
+- Escalate technical or payment-related issues to admin
