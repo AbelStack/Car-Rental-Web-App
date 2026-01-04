@@ -1,0 +1,24 @@
+#  Functional Requirements — User Stories
+
+## Admin User Stories
+
+### US-1 — Admin Login
+As an admin, I want to log in securely so that I can manage the system.
+
+### US-2 — Manage Users
+As an admin, I want to manage user accounts so that I can control system access.
+
+### US-3 — Manage Rental Cars
+As an admin, I want to add, update, or remove rental cars so that listings are accurate.
+
+### US-4 — Manage Cars for Sale
+As an admin, I want to manage cars for sale so that sold cars are not shown.
+
+### US-5 — Manage Bookings
+As an admin, I want to view and update bookings so that rentals are handled correctly.
+
+### US-6 — Verify Payments
+As an admin, I want to verify mobile banking payments so that bookings and purchases are confirmed.
+
+### US-7 — Generate Reports
+As an admin, I want to generate reports so that I can monitor system performance.
