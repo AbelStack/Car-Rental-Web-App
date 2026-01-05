@@ -1,0 +1,18 @@
+ALGORITHM Create_Booking
+INPUT: user_id, vehicle_id, pickup_date, return_date, locations, driving_option
+OUTPUT: Booking confirmation
+
+BEGIN
+    IF user not authenticated THEN
+        RETURN "Login required"
+
+    IF pickup_date >= return_date THEN
+        RETURN "Invalid date range"
+
+    IF vehicle not available THEN
+        RETURN "Vehicle unavailable"
+
+    SAVE booking with status = PENDING
+    GENERATE payment reference
+    RETURN booking details and payment instructions
+END
