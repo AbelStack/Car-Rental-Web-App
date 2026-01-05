@@ -1,0 +1,22 @@
+## Booking Table
+
+CREATE TABLE bookings (
+    booking_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    vehicle_id INT NOT NULL,
+    pickup_date DATE NOT NULL,
+    return_date DATE NOT NULL,
+    pickup_location VARCHAR(255) NOT NULL,
+    dropoff_location VARCHAR(255) NOT NULL,
+    driving_option ENUM('SELF','DRIVER') NOT NULL,
+    status ENUM('PENDING','APPROVED','CANCELLED','COMPLETED') DEFAULT 'PENDING',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_booking_user FOREIGN KEY (user_id)
+        REFERENCES users(user_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_booking_vehicle FOREIGN KEY (vehicle_id)
+        REFERENCES rental_vehicles(vehicle_id)
+        ON DELETE RESTRICT
+);
