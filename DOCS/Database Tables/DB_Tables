@@ -1,3 +1,16 @@
+##Cars for Sale Table
+
+CREATE TABLE sale_vehicles (
+    sale_vehicle_id INT AUTO_INCREMENT PRIMARY KEY,
+    brand VARCHAR(50) NOT NULL,
+    model VARCHAR(50) NOT NULL,
+    year INT NOT NULL CHECK (year >= 1990),
+    price DECIMAL(12,2) NOT NULL CHECK (price > 0),
+    specifications TEXT NOT NULL,
+    status ENUM('AVAILABLE','SOLD') DEFAULT 'AVAILABLE',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 ## Booking Table
 
 CREATE TABLE bookings (
@@ -20,3 +33,4 @@ CREATE TABLE bookings (
         REFERENCES rental_vehicles(vehicle_id)
         ON DELETE RESTRICT
 );
+
