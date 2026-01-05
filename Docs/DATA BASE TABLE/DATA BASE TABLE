@@ -1,0 +1,21 @@
+6. Purchases Table
+CREATE TABLE purchases (
+    purchase_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    sale_vehicle_id INT NOT NULL,
+    payment_id INT NOT NULL,
+    status ENUM('REQUESTED','COMPLETED','CANCELLED') DEFAULT 'REQUESTED',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_purchase_user FOREIGN KEY (user_id)
+        REFERENCES users(user_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_purchase_vehicle FOREIGN KEY (sale_vehicle_id)
+        REFERENCES sale_vehicles(sale_vehicle_id)
+        ON DELETE RESTRICT,
+
+    CONSTRAINT fk_purchase_payment FOREIGN KEY (payment_id)
+        REFERENCES payments(payment_id)
+        ON DELETE RESTRICT
+);
