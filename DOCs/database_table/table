@@ -1,14 +1,11 @@
-Payments Table
-CREATE TABLE payments (
-    payment_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    reference_number VARCHAR(100) NOT NULL UNIQUE,
-    amount DECIMAL(12,2) NOT NULL CHECK (amount > 0),
-    payment_type ENUM('RENTAL','PURCHASE') NOT NULL,
-    status ENUM('PENDING','APPROVED','REJECTED') DEFAULT 'PENDING',
-    paid_at TIMESTAMP NULL,
-
-    CONSTRAINT fk_payment_user FOREIGN KEY (user_id)
-        REFERENCES users(user_id)
-        ON DELETE CASCADE
+ Rental Vehicles Table
+CREATE TABLE rental_vehicles (
+    vehicle_id INT AUTO_INCREMENT PRIMARY KEY,
+    brand VARCHAR(50) NOT NULL,
+    model VARCHAR(50) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    price_per_day DECIMAL(10,2) NOT NULL CHECK (price_per_day > 0),
+    availability BOOLEAN DEFAULT TRUE,
+    driver_option BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
