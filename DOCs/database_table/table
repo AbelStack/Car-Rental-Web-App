@@ -1,0 +1,14 @@
+Payments Table
+CREATE TABLE payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    reference_number VARCHAR(100) NOT NULL UNIQUE,
+    amount DECIMAL(12,2) NOT NULL CHECK (amount > 0),
+    payment_type ENUM('RENTAL','PURCHASE') NOT NULL,
+    status ENUM('PENDING','APPROVED','REJECTED') DEFAULT 'PENDING',
+    paid_at TIMESTAMP NULL,
+
+    CONSTRAINT fk_payment_user FOREIGN KEY (user_id)
+        REFERENCES users(user_id)
+        ON DELETE CASCADE
+);
