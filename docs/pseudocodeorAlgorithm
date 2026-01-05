@@ -1,0 +1,15 @@
+ALGORITHM Purchase_Car
+INPUT: user_id, sale_vehicle_id
+OUTPUT: Purchase request status
+
+BEGIN
+    IF user not authenticated THEN
+        RETURN "Login required"
+
+    IF car status = SOLD THEN
+        RETURN "Car unavailable"
+
+    CREATE purchase record
+    GENERATE payment reference
+    RETURN purchase instructions
+END
