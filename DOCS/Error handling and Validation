@@ -1,0 +1,117 @@
+# Error Handling and Validation
+
+## 1. General Error Handling Policy
+
+- The system shall validate all user inputs at both client-side and server-side.
+- User-friendly error messages shall be displayed for all validation failures.
+- Internal system errors shall not be exposed to end users.
+- All critical system errors and security-related events shall be logged in audit logs.
+- The system shall prevent crashes by gracefully handling all exceptions.
+
+---
+
+## 2. User Registration and Authentication Validations
+
+- Full name must not be empty and must contain at least 3 characters.
+- Email address must be in a valid format and must be unique.
+- Phone number must be numeric and must be unique.
+- Password must contain at least 8 characters.
+- Duplicate user registration attempts shall be rejected.
+- Incorrect login credentials shall display a generic error message.
+- Suspended user accounts shall not be allowed to log in.
+
+---
+
+## 3. Vehicle Data Validation
+
+- Vehicle brand, model, and category must not be empty.
+- Rental price per day must be a positive number.
+- Sale vehicle price must be greater than zero.
+- Vehicle availability status must be correctly maintained to prevent double booking.
+- Vehicles marked as unavailable or sold shall not appear in user listings.
+
+---
+
+## 4. Search and Filter Validation
+
+- Search inputs must be validated to avoid invalid characters.
+- Price range values must be numeric and positive.
+- Date-based searches must ensure logical date order.
+- If no search results are found, the system shall display a proper message instead of an error.
+
+---
+
+## 5. Booking Validation and Error Handling
+
+- Only authenticated users shall be allowed to create bookings.
+- Pickup date must be the current date or a future date.
+- Return date must be later than the pickup date.
+- The system shall verify vehicle availability before confirming a booking.
+- Double booking of the same vehicle shall be prevented.
+- Completed bookings shall not be allowed to be cancelled.
+- Cancellation requests that violate policy shall be rejected with a clear message.
+
+---
+
+## 6. Payment Validation and Error Handling
+
+- Payment reference number must be provided and must be unique.
+- Payment amount must match the booking or purchase total.
+- Invalid or duplicate payment references shall be rejected.
+- Payment status shall remain pending until verified.
+- Failed payment verifications shall be clearly reported to the user.
+- All payment errors shall be logged for auditing purposes.
+
+---
+
+## 7. Car Purchase Validation
+
+- Only logged-in users shall be allowed to request car purchases.
+- Vehicles marked as sold shall not be purchasable.
+- One vehicle shall not be sold to more than one user.
+- Purchase requests without valid payment confirmation shall remain incomplete.
+
+---
+
+## 8. Admin Access and Authorization Validation
+
+- Only users with admin roles shall access administrative functions.
+- Unauthorized access attempts shall be blocked and logged.
+- Admin actions such as deleting or modifying data shall be validated to maintain data integrity.
+- Critical admin actions shall require confirmation before execution.
+
+---
+
+## 9. Database-Level Validation
+
+- Mandatory fields shall be enforced using `NOT NULL` constraints.
+- Duplicate values shall be prevented using `UNIQUE` constraints.
+- Data relationships shall be enforced using `FOREIGN KEY` constraints.
+- Invalid enum values shall be rejected automatically by the database.
+
+---
+
+## 10. System Security Error Handling
+
+- All input data shall be sanitized to prevent SQL injection attacks.
+- Passwords shall never be stored in plain text.
+- Multiple failed login attempts may trigger temporary account locking.
+- Secure HTTPS communication shall be enforced at all times.
+
+---
+
+## 11. Availability and Recovery Handling
+
+- The system shall display a maintenance message during scheduled downtime.
+- Temporary failures in external services (payment or map services) shall be handled gracefully.
+- Users shall be notified if an operation fails due to system unavailability.
+
+---
+
+## 12. Summary
+
+- Ensures data accuracy and consistency.
+- Prevents unauthorized access and invalid operations.
+- Improves system reliability and user trust.
+- Fully complies with functional and non-functional requirements.
+- Suitable for academic submission and real-world deployment.
