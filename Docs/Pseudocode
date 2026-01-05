@@ -1,0 +1,9 @@
+ALGORITHM Generate_Payment_Reference
+INPUT: booking_id or purchase_id
+OUTPUT: Payment reference
+
+BEGIN
+    GENERATE unique reference number
+    STORE reference with PENDING status
+    RETURN reference and payment instructions
+END
