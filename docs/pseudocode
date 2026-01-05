@@ -1,0 +1,18 @@
+ALGORITHM Search_Rental_Cars
+INPUT: brand, category, price_range, dates
+OUTPUT: Filtered vehicle list
+
+BEGIN
+    QUERY vehicles WHERE availability = TRUE
+
+    IF brand provided THEN
+        FILTER by brand
+
+    IF price_range provided THEN
+        FILTER by price
+
+    IF dates provided THEN
+        CHECK availability for date range
+
+    RETURN filtered list
+END
