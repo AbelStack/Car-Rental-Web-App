@@ -1,0 +1,18 @@
+ALGORITHM User_Registration
+INPUT: name, email, phone, password
+OUTPUT: Registration status
+
+BEGIN
+    IF name OR email OR phone OR password is empty THEN
+        RETURN "Missing required fields"
+
+    IF email format is invalid THEN
+        RETURN "Invalid email"
+
+    IF email exists in database THEN
+        RETURN "Email already registered"
+
+    HASH password
+    STORE user details in Users table
+    RETURN "Registration successful"
+END
