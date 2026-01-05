@@ -1,0 +1,72 @@
+#title Class Diagram - Car Rental & Car Sales System (LLD)
+
+class User {
+  - userId : int
+  - name : String
+  - email : String
+  - phone : String
+  - password : String
+  - role : String
+  - language : String
+
+  + register() : void
+  + login() : boolean
+  + logout() : void
+  + updateProfile() : void
+}
+
+class Admin {
+  - adminId : int
+
+  + manageUsers() : void
+  + manageVehicles() : void
+  + manageBookings() : void
+  + verifyPayments() : void
+  + generateReports() : void
+}
+
+class Vehicle {
+  - vehicleId : int
+  - brand : String
+  - model : String
+  - year : int
+  - vehicleType : String
+  - pricePerDay : double
+  - salePrice : double
+  - availabilityStatus : String
+
+  + addVehicle() : void
+  + updateVehicle() : void
+  + deleteVehicle() : void
+  + checkAvailability() : boolean
+}
+
+class Booking {
+  - bookingId : int
+  - pickupDate : Date
+  - returnDate : Date
+  - driveOption : String
+  - status : String
+
+  + createBooking() : void
+  + cancelBooking() : void
+  + confirmBooking() : void
+}
+
+class Payment {
+  - paymentId : int
+  - transactionRef : String
+  - paymentStatus : String
+
+  + generatePaymentReference() : String
+  + submitTransactionRef() : void
+  + verifyPayment() : boolean
+}
+
+User "1" -- "0..*" Booking : creates
+Vehicle "1" -- "0..*" Booking : booked for
+Booking "1" -- "1" Payment : has
+Admin -- User : manages
+Admin -- Vehicle : manages
+Admin -- Booking : manages
+Admin -- Payment : verifies
